@@ -4,22 +4,20 @@ spring:
 
   cloud:
     gateway:
-      server:
-        webflux:
-          discovery:
-            locator:
-              enabled: true
-
-          routes:
+      discovery:
+        locator:
+          enabled: true
+      routes:
         - id: user-service
           uri: lb://user-service
           predicates:
-            - Path=/user/**   # API Gateway will forward any /user/** request to user-service
-          
+            - Path=/user/**   # forward /user/** to user-service
+
         - id: config-server
           uri: http://localhost:8888
           predicates:
             - Path=/config-server/**
+
     eureka:
       client:
         serviceUrl:
