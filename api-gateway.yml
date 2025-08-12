@@ -8,7 +8,7 @@ spring:
         webflux:
           discovery:
             locator:
-              enabled: true  # Use new key for service discovery routing
+              enabled: true
 
     eureka:
       client:
