@@ -1,15 +1,20 @@
 spring:
   application:
     name: api-gateway
+
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true  # Use new key for service discovery routing
+
     eureka:
       client:
         serviceUrl:
           defaultZone: http://localhost:8761/eureka/
+
 server:
   port: 8088
 
