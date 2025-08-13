@@ -28,7 +28,7 @@ eureka:
 # Server Port
 # ========================
 server:
-  port: 8082  # Event-service port
+  port: 8071  # Event-service port
 
 # ========================
 # MongoDB Configuration
