@@ -1,21 +1,12 @@
 spring:
   application:
     name: event-service
-  profiles:
-    active: default
 
-# ========================
-# Config Server
-# ========================
   cloud:
     config:
-      uri: http://localhost:8888  # Your Config Server URL
+      uri: http://localhost:8888 
       fail-fast: true
 
-# ========================
-# Eureka Client
-# ========================
-eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
@@ -24,53 +15,30 @@ eureka:
   instance:
     prefer-ip-address: true
 
-# ========================
-# Server Port
-# ========================
+
 server:
   port: 8071  # Event-service port
 
-# ========================
-# MongoDB Configuration
-# ========================
-spring:
+
   data:
     mongodb:
-      uri: mongodb://localhost:27017/eventdb
+      uri: mongodb://localhost:27017/event-service
 
-# ========================
-# Redis Configuration
-# ========================
-spring:
+
   redis:
     host: localhost
     port: 6379
-    lettuce:
-      pool:
-        max-active: 8
-        max-idle: 8
-        min-idle: 0
-        max-wait: -1ms
-
-# ========================
-# Logging
-# ========================
+    
 logging:
   level:
     root: INFO
     com.event.event_service: DEBUG
 
-# ========================
-# Feign & Ribbon
-# ========================
 feign:
   hystrix:
     enabled: true
 
-# ========================
-# Caching (Redis)
-# ========================
-spring:
+
   cache:
     type: redis
     redis:
