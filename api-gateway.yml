@@ -19,6 +19,10 @@ spring:
               uri: http://localhost:8888
               predicates:
                 - Path=/config-server/**
+            - id: event-service
+              uri: lb://event-service
+              predicates:
+                - Path=/event/**
 
 
     eureka:
