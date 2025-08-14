@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: schedule-service
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/schedule-service
   redis:
     host: localhost
     port: 6379
