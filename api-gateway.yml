@@ -28,6 +28,8 @@ spring:
               uri: lb://schedule-service
               predicates:
                 - Path=/schedules/**
+              filters:
+                - AddRequestHeader=Authorization,
 
 
     eureka:
