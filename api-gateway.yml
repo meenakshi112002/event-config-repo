@@ -23,7 +23,9 @@ spring:
               uri: lb://event-service
               predicates:
                 - Path=/event/**
-            
+              filters:
+                - AddRequestHeader=Authorization,
+                
             - id: schedule-service
               uri: lb://schedule-service
               predicates:
