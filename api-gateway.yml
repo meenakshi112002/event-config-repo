@@ -23,6 +23,11 @@ spring:
               uri: lb://event-service
               predicates:
                 - Path=/event/**
+            
+            - id: schedule-service
+              uri: lb://schedule-service
+              predicates:
+                - Path=/schedules/**
 
 
     eureka:
