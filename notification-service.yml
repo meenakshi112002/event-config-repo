@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: notification-service
+  redis:
+    host: localhost
+    port: 6379
+  cloud:
+    config:
+      uri: http://localhost:8888
+
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: meenakshiupreti56@gmail.com
+    password: umqt xxte rpjs hawe
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8085
+notification:
+  time-window-minutes: 30
+  from-email: meenakshiupreti56@gmail.com
